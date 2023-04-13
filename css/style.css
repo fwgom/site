@@ -240,7 +240,7 @@ span.nav__icon.cart-icon{
         position: fixed;
         bottom: 0;
         left: 0;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.4);
         width: 100%;
         height: 4rem;
         padding: 0 1rem;
@@ -283,10 +283,10 @@ span.nav__icon.cart-icon{
 
 /*___CONTACT___*/
 .contact__info{
-    background-color: rgba(115, 146, 158, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    padding:10px;
+    padding:10px 10px 20px 10px;
     margin:0 auto;
 }
 .contacts__items{
@@ -296,9 +296,9 @@ span.nav__icon.cart-icon{
     gap:15px;
     max-width:970px;
     margin: 0 auto;
-  }
-  .contacts__link{
-    background-color: rgba(255, 255, 255, 0.9);
+}
+.contacts__link{
+    /*background-color: rgba(255, 255, 255, 0.9);*/
     margin-top:10px;
     min-width:100px;
     max-width: 130px;
@@ -308,28 +308,42 @@ span.nav__icon.cart-icon{
     border-radius: 1rem;
     text-decoration:none;
     font-size: 20px;
-    color: #000;
-    padding: 3px;
-    box-shadow: 0px 0px 4px 0px rgba(34,    60, 80, 0.2) inset;
-    box-shadow: 0px 0px 4px 0px rgba(34,    60, 80, 0.5);
-  
-  }
-  
-  .contacts__link:hover{
-    box-shadow: 0px 0px 4px 0px rgba(34,    60, 80, 0.5) inset;
-  
-  }
-  
-  
-  
-  
-  
-  
-  
-  .contacts__icon img{
-    max-width:64px;
-    min-width:32px;
-  }
+    color: #fff;
+    padding: 5px 7px;
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.6);
+}
+.contacts__link:hover{
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.6) inset;
+}
+.contacts__link:active{
+    box-shadow: 0px 0px 5px 0px rgb(255, 255, 255) inset;
+}
+.phone-link{
+    background-color: rgb(2, 153, 2);
+}
+.tg-link{
+    background-color: rgb(0, 141, 184);
+}
+.viber-link{
+    background-color: rgb(127, 0, 153);
+}
+.ws-link{
+    background-color: rgb(44, 221, 0);
+}
+.ig-link{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.vk-link{
+    background-color: rgb(0, 124, 161);
+}
+.store-link{
+    background-color: rgb(184, 204, 0);
+}
 
 /*BG video*/
 .overlay-text__container {
@@ -472,7 +486,8 @@ span.nav__icon.cart-icon{
 	align-items: center;
 	justify-content: center;
 	display: none;
-    overflow-y: scroll;
+    overflow-y: auto;
+    position: relative;
 }
 
 .modal-overlay--visible {
@@ -496,6 +511,25 @@ span.nav__icon.cart-icon{
     width:50%;
     min-width: 390px;
     margin: 0 auto;
+}
+.btn-close{
+    position: absolute;
+    right:0;
+    top:0;
+    padding: 5px;
+    font-size: 18px;
+    color:rgb(255, 179, 179);
+    background-color: #000;
+    border:none;
+    border:1px solid rgb(255, 179, 179);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-close:hover{
+    background-color: #464646;
+}
+.btn-close:focus{
+    background-color: #a1a1a1;
 }
 
 

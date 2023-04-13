@@ -142,11 +142,10 @@ input{
 }
 .removeAll{
     margin-top: 200px;
+    background: none;
     font-size: 15px;
-    background-color: #fff;
     outline: none;
     border: none;
-    background-color: red;
     color: #fff;
     border-radius: 5px;
     padding: 2px 5px;

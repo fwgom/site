@@ -69,9 +69,10 @@ let generateModals = () => {
       //let search = basket.find((x) => x.id === id) || [];
       return `
     <div class="modal modal-${id}" data-target="${id}">
-      <div class="modal__media"> ${videoId ? 
+      <button class='btn-close bi bi-x-lg'></button>
+      <div class="modal__media"> <!-- ${videoId ? 
         `<iframe class="modal__video" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`
-        : ''}
+        : ''} -->
       </div>
       <div class="modal__description">
         <p>${name}</p>
@@ -136,6 +137,7 @@ calculation();
 const btns = document.querySelectorAll('.btn');
 const modalOverlay = document.querySelector('.modal-overlay ');
 const modals = document.querySelectorAll('.modal');
+const closeBtn = document.querySelectorAll('.btn-close'); 
 
 btns.forEach((el) => {
 	el.addEventListener('click', (e) => {
@@ -150,20 +152,29 @@ btns.forEach((el) => {
         document.querySelector('html').classList.add('stop-scroll');
       /* ------------------------------ */
 		modalOverlay.classList.add('modal-overlay--visible');
+    closeBtn.forEach( (el) => {
+      el.addEventListener('click', function modalCloser() {
+          closeModal(modalCloser);
+      });
+    });
 
 	});
 });
 
 modalOverlay.addEventListener('click', (e) => {
-	//console.log(e.target);
-
 	if (e.target == modalOverlay) {
-		modalOverlay.classList.remove('modal-overlay--visible');
+		closeModal();
+	}
+});
+const closeModal = (modalCloser) => {
+    modalOverlay.classList.remove('modal-overlay--visible');
      /* scroll-unlock when modal unvisible */
     document.querySelector('html').classList.remove('stop-scroll');
     /*----------------------- */
 		modals.forEach((el) => {
 			el.classList.remove('modal--visible');
 		});
-	}
-});
+    closeBtn.forEach( (el) => {
+      el.removeEventListener('click', modalCloser);
+    })
+};
