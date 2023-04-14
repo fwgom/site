@@ -50,11 +50,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: 30px;
   height: 50px;
   color: #fff;
   text-align: center;
-  background: rgb(0 0 0 / 20%);
+  /*background: rgb(0 0 0 / 20%);*/
+  background: none;
   border: none;
   transform: translateY(-50%);
   cursor: pointer;
@@ -65,18 +66,18 @@
 }
 
 .itc-slider__btn_prev {
-  left: 0;
+  left: -15px;
 }
 
 .itc-slider__btn_next {
-  right: 0;
+  right: -15px;
 }
 
 .itc-slider__btn:hover,
 .itc-slider__btn:focus {
   color: #fff;
   text-decoration: none;
-  background: rgb(0 0 0 / 30%);
+  /*background: rgb(0 0 0 / 30%);*/
   outline: 0;
 }
 
