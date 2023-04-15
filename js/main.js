@@ -63,6 +63,7 @@ generateShop();
 let modalsContainer = document.querySelector(".modal-overlay");
 
 let generateModals = () => {
+
   let modalContent = (modalsContainer.innerHTML = shopItemsData
     .map((x) => {
       let { id, name, price, desc, img, videoId } = x;
@@ -70,24 +71,29 @@ let generateModals = () => {
       return `
     <div class="modal modal-${id}" data-target="${id}">
       <button class='btn-close bi bi-x-lg'></button>
-      <div class="modal__media"> <!-- ${videoId ? 
-        `<iframe class="modal__video" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`
-        : ''} -->
-      </div>
+
+      ${videoId ? 
+        `
+        <div class="modal__media"> 
+        <iframe class="modal__video" src="https://www.youtube.com/embed/${videoId}?autoplay=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        `
+        : ''}
+      
       <div class="modal__description">
         <p>${name}</p>
         <p>${desc}</p>
         <p>Цена ${price} руб.</p>
+        
       </div>
     </div>
     `;
     })
     .join(""));
-
+    
   return modalContent;
 };
 generateModals();
-
 //__________________________
 let increment = (id) => {
   let selectedItem = id;
@@ -167,6 +173,10 @@ modalOverlay.addEventListener('click', (e) => {
 	}
 });
 const closeModal = (modalCloser) => {
+    let iframes = document.querySelectorAll('iframe');
+    for (iframe of iframes){
+      iframe.src = iframe.src;
+    }
     modalOverlay.classList.remove('modal-overlay--visible');
      /* scroll-unlock when modal unvisible */
     document.querySelector('html').classList.remove('stop-scroll');

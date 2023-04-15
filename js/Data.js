@@ -21,6 +21,7 @@ let shopItemsData = [
     price: 25,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "images/img-3.jpg",
+    videoId: "S395XDsCKDw",
   },
   {
     id: "thyfhcbcv",
