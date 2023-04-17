@@ -21,8 +21,10 @@ a{
 body{
     /*background-color: rgba(0, 0, 0, 0.8);*/
     font-family: 'Poppins', sans-serif;
+    
     background: rgb(25,25,25);
     background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(19,15,64,1) 59%);
+
     color: rgba(255, 255, 255, 1);
 }
 .container{
@@ -154,11 +156,15 @@ span.nav__icon.cart-icon{
     max-width: 300px;
     object-fit: cover;
     border-radius: 1rem 1rem 0 0;
+    max-height: 180px;
 }
 .details{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.details p{
+    padding: 0 10px;
 }
 .item .buttons{
     display: flex;
@@ -179,41 +185,6 @@ span.nav__icon.cart-icon{
     padding: 5px 15px;
 
 }
-
-/*_________________________*/
-/*.card {
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    color:#fff;
-    margin: 0 auto;
-    max-width: 80%;
-    border-radius: 2rem;
-    padding: 20px 15px;
-}
-.card__pic {
-    text-align: center;
-}
-.card__img {
-    max-width: 100%;
-    border-radius: 15px;
-    object-fit: cover;
-}
-.card__title {
-    margin-top: 15px;
-    font-size: 24px;
-    text-align: center;
-}
-.card__description {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-.card__btn {
-    margin: 25px 0 15px 0;
-    display: flex;
-    justify-content: center;
-    font-size: 22px;
-}*/
 
 @media (min-width: 769px){
     .active__link::before{
@@ -236,20 +207,23 @@ span.nav__icon.cart-icon{
         backdrop-filter: unset;
         background-color: rgba(18, 18, 18, 0.2);
     }	
+    .nav__logo{
+        display: none;
+    }
     .nav__menu{
         position: fixed;
-        bottom: 0;
+        top: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
         width: 100%;
         height: 4rem;
         padding: 0 1rem;
         display: grid;
         align-content: center;
-        border-radius: 1.25rem 1.25rem 0 0;
+        border-radius: 0 0 1.25rem 1.25rem;
         transition: 0.4s;
         box-shadow: 0 -1px 12px rgba(59, 59, 59, 0.25);
-	    backdrop-filter: blur(5px);
     }
     .nav{
         height: 2rem;
@@ -278,6 +252,14 @@ span.nav__icon.cart-icon{
     .nav__list{
         justify-content: center;
     }
+}
+@media (max-width: 576px){
+    .contact__info{
+        flex-direction: column;
+    }
+    .contacts__map{
+        height: 250px;
+    }
     
 }
 
@@ -288,6 +270,8 @@ span.nav__icon.cart-icon{
     border-radius: 10px;
     padding:10px 10px 20px 10px;
     margin:0 auto;
+    display: flex;
+    gap: 20px;
 }
 .contacts__items{
     display: flex;
@@ -295,6 +279,19 @@ span.nav__icon.cart-icon{
     gap:10px;
     max-width:970px;
     margin: 0 auto;
+}
+.contacts__map{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px 0;
+    text-align: center;
+}
+.contacts__map iframe{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    border-radius: 0.5rem;
 }
 .contacts__link{
     /*background-color: rgba(255, 255, 255, 0.9);*/
@@ -501,19 +498,72 @@ span.nav__icon.cart-icon{
     overflow: hidden;
 }
 /*------modal-video-styles*/
-.modal__media{
-    width:100%;
-    padding-top: 56.25%;
+.video {
     position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-color: #000000;
 }
-.modal__video{
+.video__link {
     position: absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+}
+
+.video__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: none;
+    padding: 0;
+    width: 68px;
+    height: 48px;
+    border: none;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.video__button-shape {
+    fill: #212121;
+    fill-opacity: 0.8;
+}
+
+.video__button-icon {
+    fill: #ffffff;
+}
+
+.video__button:focus {
+    outline: none;
+}
+
+.video:hover .video__button-shape,
+.video__button:focus .video__button-shape {
+    fill: #ff0000;
+    fill-opacity: 1;
+}
+
+/* Enabled */
+
+.video--enabled {
+    cursor: pointer;
+}
+
+.video--enabled .video__button {
+    display: block;
 }
 /*------------------*/
 .btn-close{
