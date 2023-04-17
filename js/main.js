@@ -39,17 +39,19 @@ let generateShop = () => {
           <div class="details">
             <h3>${name}</h3>
             <p>${desc}</p>
-            <button class="btn" data-path="${id}">Подробнее</button>
-            <div class="price-quantity">
-              <h2>${price} руб.</h2>
-              <div class="buttons">
-                <span onclick="decrement(${id})" class="bi bi-dash-lg"></span>
-                <div id=${id} class="quantity">
-                ${search.item === undefined ? 0 : search.item}
+            <div>
+              <button class="btn" data-path="${id}">Подробнее</button>
+              <div class="price-quantity">
+                <h2>${price} руб.</h2>
+                <div class="buttons">
+                  <span onclick="decrement(${id})" class="bi bi-dash-lg"></span>
+                  <div id=${id} class="quantity">
+                  ${search.item === undefined ? 0 : search.item}
+                  </div>
+                  <span onclick="increment(${id})" class="bi bi-plus-lg"> Добавить</span>
                 </div>
-                <span onclick="increment(${id})" class="bi bi-plus-lg"> Добавить</span>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
     </div>

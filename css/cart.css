@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 body{
-    background: rgb(25,25,25);
-    background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(19,15,64,1) 59%);
+    /*background: rgb(25,25,25);
+    background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(19,15,64,1) 59%);*/
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
 }
 .text-center{
